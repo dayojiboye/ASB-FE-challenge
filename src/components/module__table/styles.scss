@@ -1,0 +1,191 @@
+.module_table_wrapper {
+  grid-column: 2;
+  grid-row: 2;
+
+  .module_table {
+    background: var(--primary-color);
+    border-collapse: collapse;
+    width: var(--full);
+    color: #899198;
+    font-size: 12px;
+    box-shadow: var(--primary-box-shadow);
+
+    tr {
+      border-bottom: 1px solid var(--fade);
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    th,
+    td {
+      text-align: left;
+    }
+
+    th {
+      border: none;
+      background: #eaeef0;
+      padding: 1rem;
+
+      &:nth-child(6) {
+        width: 190px;
+      }
+    }
+
+    td {
+      padding: 0 1rem;
+      white-space: nowrap;
+      height: 61px;
+
+      &:nth-child(7) {
+        width: 120px;
+      }
+
+      &._select_column {
+        > button {
+          padding: 0;
+          display: inline-flex;
+          background: transparent;
+          border: none;
+          margin-left: 1rem;
+
+          svg {
+            height: 13px;
+          }
+        }
+      }
+
+      &._name_column {
+        font-weight: bold;
+        font-size: 14px;
+        color: var(--table-black);
+      }
+
+      &._location_column {
+        > ._location_state {
+          display: block;
+          margin-bottom: 3px;
+          font-weight: bold;
+          color: var(--table-black);
+        }
+      }
+
+      &._status_column {
+        > span {
+          border-radius: 11px;
+          padding: 2px 12px;
+
+          &[data-error-status='false'] {
+            background: #f6f3ff;
+            color: var(--light-blue);
+            font-weight: bold;
+            font-size: 14px;
+          }
+
+          &[data-error-status='true'] {
+            background: var(--lighter-gold);
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 14px;
+          }
+        }
+      }
+
+      &._entry_column {
+        > ._entry_count {
+          display: flex;
+          margin-bottom: 3px;
+          font-weight: bold;
+          color: var(--table-black);
+          align-items: center;
+          margin-left: 4px;
+
+          &::before {
+            content: '';
+            background: url('../../assets/svg/bullet_dot_black.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            margin-right: 0.3rem;
+            flex-shrink: 0;
+            width: 6px;
+            height: 6px;
+          }
+        }
+      }
+
+      &._risk_column {
+        > span {
+          font-weight: bold;
+          text-transform: capitalize;
+
+          &[data-risk='Low risk'] {
+            color: var(--green);
+            display: flex;
+            align-items: center;
+
+            &::before {
+              content: '';
+              background: url('../../assets/svg/arrow_down.svg');
+              background-position: center;
+              background-size: cover;
+              background-repeat: no-repeat;
+              width: 9px;
+              height: 9px;
+              flex-shrink: 0;
+              margin-right: 0.7rem;
+            }
+          }
+
+          &[data-risk='Mid risk'] {
+            color: var(--blue);
+            display: flex;
+            align-items: center;
+
+            &::before {
+              content: '';
+              background: url('../../assets/svg/arrow_right.svg');
+              background-position: center;
+              background-size: cover;
+              background-repeat: no-repeat;
+              width: 12px;
+              height: 12px;
+              flex-shrink: 0;
+              margin-right: 0.7rem;
+            }
+          }
+
+          &[data-risk='High risk'] {
+            color: var(--red);
+            display: flex;
+            align-items: center;
+
+            &::before {
+              content: '';
+              background: url('../../assets/svg/arrow_up.svg');
+              background-position: center;
+              background-size: cover;
+              background-repeat: no-repeat;
+              width: 12px;
+              height: 12px;
+              flex-shrink: 0;
+              margin-right: 0.7rem;
+            }
+          }
+        }
+      }
+
+      &._dialogue_btn {
+        > button {
+          background: transparent;
+          padding: 0;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

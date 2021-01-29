@@ -1,0 +1,64 @@
+.module_tab {
+  grid-column: 1/3;
+  grid-row: 1;
+  padding: 0.7rem 0;
+
+  &__pagination {
+    width: var(--full);
+    display: flex;
+    align-items: center;
+
+    a {
+      color: var(--dark-gray);
+    }
+
+    ._tab_paginate_icon {
+      margin: 0 0.5rem;
+      height: 12px;
+    }
+  }
+
+  &__metrics {
+    width: var(--full);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    padding: 1rem 0;
+
+    ._tab_metrics_card {
+      width: 19%;
+      background: var(--primary-color);
+      border-radius: var(--primary-border-radius);
+      box-shadow: var(--primary-box-shadow);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      padding: 1.3rem 1rem 1rem;
+      position: relative;
+
+      > h6 {
+        font-size: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &::after {
+          content: '';
+          background: url('../../assets/svg/exclamation_svg.svg');
+          width: 23px;
+          height: 23px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          flex-shrink: 0;
+        }
+      }
+
+      > span {
+        font-weight: bold;
+        color: var(--text-inverted);
+      }
+    }
+  }
+}
